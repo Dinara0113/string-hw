@@ -42,15 +42,15 @@ public class Main {
         }
     }
 
-    private static String calculateDeliveryDistance(int distance) {
-        if (distance > 100) {
-            return "Wrong distance";
-        } else if (distance < 20) {
-            int i = (int) Math.ceil((double) ((distance - 20) / 40) + 1);
-            return i + "";
+    public static int calculateDeliveryDistance(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
+            return 1;
+        } else if (deliveryDistance <= 60) {
+            return 2;
+        } else if (deliveryDistance <= 100) {
+            return 3;
         } else {
-            return 1 + " сутки";
+            return -1;
         }
     }
-
 }
