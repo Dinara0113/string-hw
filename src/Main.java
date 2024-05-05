@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task 1");
-        int year = 1584;
+        int year = 2021; //этот год указан в задании
         checkYearLeapAndPrint(year);
 
         System.out.println("Task 2");
@@ -45,7 +45,7 @@ public class Main {
         if (distance > 100) {
             return "Wrong distance";
         } else {
-            int i = (int) Math.ceil((double) (distance - 20 / 40) + 1);
+            int i = (int) Math.ceil((double) ((distance - 20) / 40) + 1);
             return i + "";
         }
     }
