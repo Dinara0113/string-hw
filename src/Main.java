@@ -1,10 +1,11 @@
-import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task 1");
         int year = 2021; //этот год указан в задании
-        checkYearLeapAndPrint(year);
+        String chechedYear = checkYearLeapAndPrint(year);
+        System.out.println(chechedYear);
 
         System.out.println("Task 2");
         int clientOs = 1;
@@ -16,7 +17,7 @@ public class Main {
     }
 
     private static String validateDeviceAndYear(int deviceType, int year) {
-        int currentYear = 2015;
+        int currentYear = LocalDate.now().getYear();
         if (deviceType == 0 && year < currentYear) {
             return "Установите облегченную версию приложения для IOS по ссылке";
         } else if (deviceType == 0 && year >= currentYear) {
@@ -31,14 +32,13 @@ public class Main {
 
     }
 
-    private static void checkYearLeapAndPrint(int leapYear) {
+    private static String checkYearLeapAndPrint(int leapYear) {
         boolean leapYearConditions = (leapYear % 400 == 0) || (leapYear % 4 == 0 && leapYear % 100 != 0);
         boolean validYear = leapYear >= 1584;
         if (validYear && leapYearConditions) {
-            System.out.printf("%s год - високосный год", leapYear);
         } else {
-            System.out.printf("%s год - не високосный год", leapYear);
         }
+        return null;
     }
 
     private static String calculateDeliveryDistance(int distance) {
