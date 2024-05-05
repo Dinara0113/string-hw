@@ -13,7 +13,7 @@ public class Main {
         System.out.println(validateDeviceAndYear(clientOs, clientDeviceYear));
 
         System.out.println("Task 3");
-        System.out.println(calculateDeliveryDistance(101));
+        System.out.println(calculateDeliveryDistance(94));
     }
 
     private static String validateDeviceAndYear(int deviceType, int year) {
@@ -36,17 +36,20 @@ public class Main {
         boolean leapYearConditions = (leapYear % 400 == 0) || (leapYear % 4 == 0 && leapYear % 100 != 0);
         boolean validYear = leapYear >= 1584;
         if (validYear && leapYearConditions) {
+            return "год - високосный год";
         } else {
+            return "год - не високосный год";
         }
-        return null;
     }
 
     private static String calculateDeliveryDistance(int distance) {
         if (distance > 100) {
             return "Wrong distance";
-        } else {
+        } else if (distance < 20) {
             int i = (int) Math.ceil((double) ((distance - 20) / 40) + 1);
             return i + "";
+        } else {
+            return 1 + " сутки";
         }
     }
 
